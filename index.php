@@ -17,8 +17,8 @@
         <div class="menu">
             <img src="./assets/images/logo.png" alt="Logo">
             <ul>
-                <li><a href="?page=produtos">Cadastro de Produtos</a></li>
-                <li><a href="?page=venda-produto">Venda de Produtos</a></li>
+                <li><a href="?page=cadastro_produtos">Cadastro de Produtos</a></li>
+                <li><a href="?page=venda_produto">Venda de Produtos</a></li>
             </ul>
         </div>
 

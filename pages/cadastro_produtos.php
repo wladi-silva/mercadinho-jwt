@@ -1,3 +1,30 @@
+<?php
+
+include 'models/Produto.php';
+include 'controllers/ProdutoController.php';
+include 'repositories/BancoDadosMemoria.php';
+
+// Instância da classe Produto
+$produto = new Produto();
+// Instância da classe BancoDadosMemoria
+$bancoDados = new BancoDadosMemoria();
+// Instância da classe ProdutoController
+$produtoController = new ProdutoController($produto, $bancoDados);
+
+// Verifica se existe dados do novo produto no POST
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cadastrar'])) {
+    // Dados do novo produto
+    $novoProduto = [
+        'nome' => $_POST['nome'],
+        'preco' => $_POST['preco'],
+        'quantidade' => $_POST['quantidade'],
+    ];
+
+    // Cadastrar o novo produto usando o Controller
+    $produtoCadastrado = $produtoController->cadastrarProduto($novoProduto);
+}
+
+?>
 
 <head>
     <link rel="stylesheet" href="./assets/css/produtos.css">
@@ -17,7 +44,7 @@
                             <label class="texto-label">Nome do Produto</label>
                         </div>
                         <div class="entrada-input">
-                            <input maxlength="250" type="text" placeholder="Nome do produto" class="input-padrao" value="" name="nome">
+                            <input maxlength="250" type="text" placeholder="Nome do produto" class="input-padrao" value="" name="nome" required>
                         </div>
                     </div>
 
@@ -26,7 +53,7 @@
                             <label class="texto-label">Preço do Produto</label>
                         </div>
                         <div class="entrada-input">
-                            <input type="number" step="0.01" placeholder="0.00" class="input-padrao" value="" name="preco">
+                            <input type="number" step="0.01" placeholder="0.00" class="input-padrao" value="" name="preco" required>
                         </div>
                     </div>
 
@@ -35,7 +62,7 @@
                             <label class="texto-label">Quantidade em Estoque</label>
                         </div>
                         <div class="entrada-input">
-                            <input type="number" placeholder="0" class="input-padrao" value="" name="quantidade">
+                            <input type="number" placeholder="0" class="input-padrao" value="" name="quantidade" required>
                         </div>
                     </div>
 
@@ -61,11 +88,8 @@
                         </thead>
                         <tbody>
                             <?php
-                                $listaDeProdutos = [
-                                    ['nome' => 'Feijão', 'preco' => 9.05, 'quantidade' => 20],
-                                    ['nome' => 'Arroz', 'preco' => 5.89, 'quantidade' => 20],
-                                ];
-                                foreach ($listaDeProdutos as $produto) : ?>
+                                $produtosDoBanco = $bancoDados->getAllProdutos();
+                                foreach ($produtosDoBanco as $produto) : ?>
                                     <tr>
                                         <td><?= $produto['nome']; ?></td>
                                         <td><?= $produto['preco']; ?></td>
