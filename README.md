@@ -15,6 +15,10 @@ cliente: Mercadinho JWT.
 
 ![Produtos](./assets/images/readme/cadastro-produtos.png)
 
+## Vendas
+
+![Vendas](./assets/images/readme/venda-produtos.png)
+
 ## Como Executar:
 
 - Clone o repositório: git clone https://github.com/wladi-silva/mercadinho-jwt.git
@@ -28,18 +32,14 @@ cliente: Mercadinho JWT.
 ![Exception Insuficiente](./assets/images/readme/exception-insuficiente.png)
 
 ## Funcionalidades Implementadas:
-Cadastro de Produtos:
+- <h3>Cadastro de Produtos:</h3>
 ![Produtos](./assets/images/readme/cadastro-produtos.png)
-
-Listagem de Produtos:
+- <h3>Listagem de Produtos:</h3>
 ![Listagem Produtos](./assets/images/readme/listagem-produtos.png)
-
-Venda de Produtos:
+- <h3>Venda de Produtos:</h3>
 ![Vendas](./assets/images/readme/venda-produtos.png)
-
-Listagem de Vendas:
+- <h3>Listagem de Vendas:</h3>
 ![Listagem Produtos](./assets/images/readme/listagem-vendas.png)
 
 ## Extra
-
-- Com a utilização do Banco em Memória, ao vender um produto, ele é automaticamente descontado da tela de produtos
+- Com a utilização do Banco em Memória, ao vender um produto, ele é automaticamente descontado da tela de produtos.
