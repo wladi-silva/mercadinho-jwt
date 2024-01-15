@@ -1,7 +1,7 @@
 <?php
 
-include 'exceptions/QuantidadeInvalidoException.php';
-include 'exceptions/PrecoInvalidoException.php';
+include_once 'exceptions/QuantidadeInvalidaException.php';
+include_once 'exceptions/PrecoInvalidoException.php';
 
 // Classe Controller dos produtos para adiministrar e orquestrar as movimentações do usuário
 class ProdutoController {
@@ -26,7 +26,7 @@ class ProdutoController {
             // Atualiza a visualização com os detalhes do novo produto
             $produtos = $this->listarProdutos();
             return $produtos;
-        } catch (PrecoInvalidoException | QuantidadeInvalidoException $e) {
+        } catch (PrecoInvalidoException | QuantidadeInvalidaException $e) {
             // Exibe uma mensagem de erro em Tela
             echo '<div style="border: 2px solid red; padding: 10px; background-color: #ffe6e6;">';
             echo "Erro: " . $e->getMessage();

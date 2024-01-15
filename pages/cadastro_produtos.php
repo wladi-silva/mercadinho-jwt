@@ -2,10 +2,10 @@
 
 include 'models/Produto.php';
 include 'controllers/ProdutoController.php';
-include 'repositories/BancoDadosMemoria.php';
+include_once 'repositories/BancoDadosMemoria.php';
 
 // Instância da classe Produto
-$produto = new Produto();
+$produto = new Produto('');
 // Instância da classe BancoDadosMemoria
 $bancoDados = new BancoDadosMemoria();
 // Instância da classe ProdutoController
@@ -17,17 +17,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cadastrar'])) {
     $novoProduto = [
         'nome' => $_POST['nome'],
         'preco' => $_POST['preco'],
-        'quantidade' => $_POST['quantidade'],
+        'quantidade' => $_POST['quantidade']
     ];
 
-    // Cadastrar o novo produto usando o Controller
-    $produtoCadastrado = $produtoController->cadastrarProduto($novoProduto);
+    // Cadastrar a novo produto usando o Controller
+    $produtoController->cadastrarProduto($novoProduto, $bancoDados);
 }
 
 ?>
 
 <head>
-    <link rel="stylesheet" href="./assets/css/produtos.css">
+    <link rel="stylesheet" href="./assets/css/principal.css">
 </head>
 
 <body>
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cadastrar'])) {
 
                     <div class="campo-laranja">
                         <div class="caixa-info">
-                            <label class="texto-label">Quantidade em Estoque</label>
+                            <label class="texto-label">Quantidade do Produto</label>
                         </div>
                         <div class="entrada-input">
                             <input type="number" placeholder="0" class="input-padrao" value="" name="quantidade" required>

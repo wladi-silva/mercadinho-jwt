@@ -1,9 +1,15 @@
 <?php
 
+include_once 'exceptions/QuantidadeInvalidaException.php';
+
 class Produto {
     private $nome;
     private $preco;
     private $quantidade;
+
+    public function __construct($nome) {
+        $this->nome = $nome;
+    }
 
     public function setProduto($data) {
         if (isset($data['nome']) && isset($data['preco']) && isset($data['quantidade'])) {
@@ -26,8 +32,12 @@ class Produto {
         ];
     }
 
+    public function getNome() {
+        return $this->nome;
+    }
+
     // Validar preço menor ou igual a zero
-    private function validarPreco($preco) {
+    public function validarPreco($preco) {
         if ($preco <= 0) {
             // Lançar Exception preço invalida 
             throw new PrecoInvalidoException();
@@ -35,14 +45,13 @@ class Produto {
     }
 
     // Validar preço menor ou igual a zero
-    private function validarQuantidade($quantidade) {
+    public function validarQuantidade($quantidade) {
         if ($quantidade <= 0) {
             // Lançar Exception quantidade invalida 
-            throw new QuantidadeInvalidoException();
+            throw new QuantidadeInvalidaException();
         }
     }
-
-    
+  
 }
 
 ?>

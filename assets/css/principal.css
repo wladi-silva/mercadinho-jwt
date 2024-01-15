@@ -45,6 +45,10 @@
     width: calc(100% - 24px);
 }
 
+.select {
+    width: 100%;
+}
+
 .botao-entrar {
     background-color: #ff5f01;
     color: white;
@@ -61,6 +65,11 @@
 }
 
 .lista-produtos {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.lista-vendas {
     margin-top: 20px;
     margin-bottom: 30px;
 }
@@ -86,3 +95,4 @@
 .tabela-produtos th {
     background-color: #f2f2f2;
 }
+
