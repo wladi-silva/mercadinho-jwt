@@ -1,8 +1,7 @@
 
 # Desafio técnico: Desenvolvedor de Software 🚀
 
-Desenvolver um sistema de Ponto de Venda (PDV) para o
-cliente: Mercadinho JWT.
+Desenvolver um sistema de Ponto de Venda (PDV)
 
 ## Estrutura do Projeto:
 
