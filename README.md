@@ -20,9 +20,9 @@ Desenvolver um sistema de Ponto de Venda (PDV)
 
 ## Como Executar:
 
-- Clone o repositório: git clone https://github.com/wladi-silva/mercadinho-jwt.git
+- Clone o repositório: git clone https://github.com/wladi-silva/ponto-de-venda-php.git
 - Abra o projeto em um servidor PHP (por exemplo, XAMPP ou Apache).
-- Acesse a página principal: http://localhost/mercadinho-jwt
+- Acesse a página principal: http://localhost/ponto-de-venda-php
 
 ## Tratamento de Erros
 
